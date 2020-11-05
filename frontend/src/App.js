@@ -11,9 +11,11 @@ import TestPage from "./TestPage"
 function App() {
 	return (
 		<div className="App">
-			<Navigation />
-      <Route exact path="/" component={MainPage} />
-      <Route exact path="/test" component={TestPage} />
+			<div className="App-header">
+				<Navigation />
+				<Route exact path="/" component={MainPage} />
+				<Route exact path="/test" component={TestPage} />
+			</div>
 		</div>
 	)
 }

@@ -3,23 +3,23 @@ import Container from "react-bootstrap/Container"
 import MainPage from "../MainPage"
 import TestPage from "../TestPage"
 
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 function Navigation() {
 	return (
-		<Container>
+		<Container style={{ "padding": 0 }}>
 			<div class="bs-example">
 				<ul class="nav nav-pills nav-fill w-100">
 					<li class="nav-item">
-						<Link className="nav-link" exact to="/">
+						<NavLink className="nav-link" activeClassName="active" exact to="/">
 							Home
-						</Link>
+						</NavLink>
 					</li>
 
 					<li class="nav-item">
-						<Link className="nav-link" exact to="/test">
+						<NavLink className="nav-link" activeClassName="active" exact to="/test">
 							test
-						</Link>
+						</NavLink>
 					</li>
 				</ul>
 			</div>
