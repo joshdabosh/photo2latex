@@ -1,10 +1,10 @@
-import logo from "./logo.svg"
-import "./App.css"
-import "bootstrap/dist/css/bootstrap.min.css"
-import Button from "react-bootstrap/Button"
-import Navigation from "./components/Navigation"
+import React from "react"
 import { Route } from "react-router-dom"
 
+import "./App.css"
+import "bootstrap/dist/css/bootstrap.min.css"
+
+import Navigation from "./components/Navigation"
 import MainPage from "./MainPage"
 import TestPage from "./TestPage"
 
