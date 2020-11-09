@@ -1,25 +1,33 @@
+import React from "react"
 import Container from "react-bootstrap/Container"
 
-import MainPage from "../MainPage"
-import TestPage from "../TestPage"
-
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 function Navigation() {
 	return (
-		<Container>
-			<div class="bs-example">
-				<ul class="nav nav-pills nav-fill w-100">
-					<li class="nav-item">
-						<Link className="nav-link" exact to="/">
+		<Container style={{ padding: 0 }}>
+			<div className="bs-example">
+				<ul className="nav nav-pills nav-fill w-100">
+					<li className="nav-item">
+						<NavLink
+							className="nav-link"
+							activeClassName="active"
+							exact
+							to="/"
+						>
 							Home
-						</Link>
+						</NavLink>
 					</li>
 
-					<li class="nav-item">
-						<Link className="nav-link" exact to="/test">
+					<li className="nav-item">
+						<NavLink
+							className="nav-link"
+							activeClassName="active"
+							exact
+							to="/test"
+						>
 							test
-						</Link>
+						</NavLink>
 					</li>
 				</ul>
 			</div>

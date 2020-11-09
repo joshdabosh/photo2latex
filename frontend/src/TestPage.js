@@ -1,8 +1,4 @@
-import logo from "./logo.svg"
-import "./App.css"
-import "bootstrap/dist/css/bootstrap.min.css"
-import Button from "react-bootstrap/Button"
-import Navigation from "./components/Navigation"
+import React from "react"
 
 function TestPage() {
 	return (
