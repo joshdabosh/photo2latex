@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom"
 
 function Navigation() {
 	return (
-		<Container style={{ padding: 0 }}>
+		<Container style={{ padding: "1em 0.5em" }}>
 			<div className="bs-example">
 				<ul className="nav nav-pills nav-fill w-100">
 					<li className="nav-item">
