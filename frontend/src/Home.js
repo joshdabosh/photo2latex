@@ -1,11 +1,11 @@
 import React from "react"
 
 import Changelog from "./components/Changelog"
-import Button from "react-bootstrap/Button"
+import { Button } from "react-bootstrap"
 
 function Home() {
 	return (
-		<div style={{ padding: "1em 0.5em" }}>
+		<div style={{ padding: "1em 0" }}>
 			<div>
 				<h1 className="display-4 font-weight-bold">Photo2LaTex</h1>
 				<p>
