@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 function ChangelogEntry(props) {
 	return (
-		<div className="bs-example">
+		<div>
 			<p>{props.date}</p>
 			<ul>
 				<li>{props.text}</li>

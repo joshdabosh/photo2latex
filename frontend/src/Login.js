@@ -15,8 +15,8 @@ function Login() {
 	}
 
 	return (
-		<div style={{ padding: "1em 0" }}>
-			<h1 className="display-4 font-weight-bold">Login</h1>
+		<div>
+			<h1 className="display-4">Login</h1>
 
 			<Form>
 				<Form.Group controlId="formBasicEmail">
