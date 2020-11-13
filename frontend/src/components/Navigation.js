@@ -1,49 +1,39 @@
 import React from "react"
-import { Container } from "react-bootstrap"
+import { Container, Nav } from "react-bootstrap"
 
 import { NavLink } from "react-router-dom"
 
-function Navigation() {
+import PropTypes from "prop-types"
+
+function Navigation(props) {
 	return (
 		<Container style={{ padding: "1em 0" }}>
-			<div className="bs-example">
-				<ul className="nav nav-pills nav-fill w-100">
-					<li className="nav-item">
+			<Nav
+				variant="pills"
+				fill
+				style={{
+					width: "100%",
+				}}
+			>
+				{props.routes.map((r, idx) => (
+					<Nav.Item key={idx} className="nav-item">
 						<NavLink
 							className="nav-link"
 							activeClassName="active"
 							exact
-							to="/"
+							to={r.path}
 						>
-							Home
+							{r.name}
 						</NavLink>
-					</li>
-
-					<li className="nav-item">
-						<NavLink
-							className="nav-link"
-							activeClassName="active"
-							exact
-							to="/login"
-						>
-							Login
-						</NavLink>
-					</li>
-
-					<li className="nav-item">
-						<NavLink
-							className="nav-link"
-							activeClassName="active"
-							exact
-							to="/register"
-						>
-							Register
-						</NavLink>
-					</li>
-				</ul>
-			</div>
+					</Nav.Item>
+				))}
+			</Nav>
 		</Container>
 	)
+}
+
+Navigation.propTypes = {
+	routes: PropTypes.array,
 }
 
 export default Navigation
