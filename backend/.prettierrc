@@ -2,5 +2,5 @@
     "singleQuote": true,
     "useTabs": false,
     "tabWidth": 4,
-    "semi": false,
+    "semi": false
 }
