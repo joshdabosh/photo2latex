@@ -15,10 +15,7 @@ const getUser = async (username, password) => {
         .find({
             name: {
                 $eq: username,
-            },
-            pass: {
-                $eq: password,
-            },
+            }
         })
         .toArray()
 }

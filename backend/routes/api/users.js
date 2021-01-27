@@ -3,9 +3,9 @@ const jwt = require('jsonwebtoken')
 
 const uuid = require('uuid')
 
-const secret = require('crypto').randomBytes(64)
+const argon2 = require('argon2')
 
-console.log(secret)
+const secret = require('crypto').randomBytes(64)
 
 const router = express.Router()
 
@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
         res.json(
             await insertUser({
                 name: username,
-                pass: password,
+                pass: await argon2.hash(password),
             })
         )
     } catch (e) {
@@ -42,14 +42,19 @@ router.post('/register', async (req, res) => {
 router.post('/auth', async (req, res) => {
     const { username, password } = req.body
 
-    const user = await getUser(username, password)
+    const user = await getUser(username)
 
     if (user.length == 1) {
-        const accessToken = jwt.sign({ username: user[0].user }, secret)
+        if (await argon2.verify(user[0].pass, password)) {
+            const accessToken = jwt.sign({ username: user[0].user }, secret)
 
-        res.json({
-            accessToken,
-        })
+            res.json({
+                accessToken,
+            })
+        } else {
+            res.status(401)
+            res.send('Unauthorized')
+        }
     } else {
         res.status(401)
         res.send('Unauthorized')
