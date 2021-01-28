@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Holder from "./img/holder.png"
 import Testing_Image from "./img/a_137.jpg"
 import Testing_Image2 from "./img/c_14147.jpg"
-//import Testing from "./img/testing_7.png"
+// import Testing from "./img/testing_7.png"
 import Modal from "react-bootstrap/Modal"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
@@ -84,7 +84,7 @@ function Convert() {
 
 	const handleClose = () => setShow(false)
 	const handleShow = () => setShow(true)
-
+	
 	const cards = ["scan_0.png", "scan_1.jpg", "scan_2.pdf"]
 
 	if (redirect) {
@@ -113,30 +113,6 @@ function Convert() {
 					</Button>
 				</Navbar.Collapse>
 			</Navbar>
-
-			<div className="container">
-				<CardGroup>
-					{cards.map((card, idx) => (
-						<Card key={idx}>
-							<Card.Body>
-								<Card.Title>Scan {idx}</Card.Title>
-								<Card.Img
-									id={card}
-									variant="top"
-									src={Holder}
-								/>
-								<Card.Text>{card}</Card.Text>
-								<Button variant="primary">Copy Code</Button>
-							</Card.Body>
-							<Card.Footer>
-								<small className="text-muted">
-									Last updated 3 mins ago
-								</small>
-							</Card.Footer>
-						</Card>
-					))}
-				</CardGroup>
-			</div>
 
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
@@ -168,6 +144,31 @@ function Convert() {
 					<Button variant="primary">Upload</Button>
 				</Modal.Footer>
 			</Modal>
+
+			<div className="container">
+				<CardGroup>
+					{cards.map((card, idx) => (
+						<Card key={idx}>
+							<Card.Body>
+								<Card.Title>Scan {idx}</Card.Title>
+								<Card.Img
+									id={card}
+									variant="top"
+									src={Holder}
+								/>
+								<Card.Text>{card}</Card.Text>
+								<Button variant="primary">Copy Code</Button>
+							</Card.Body>
+							<Card.Footer>
+								<small className="text-muted">
+									Last updated 3 mins ago
+								</small>
+							</Card.Footer>
+						</Card>
+					))}
+				</CardGroup>
+			</div>
+
 			<img
 				src={Testing_Image}
 				id="a_137.jpg"

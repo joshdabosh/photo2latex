@@ -51,9 +51,11 @@ function App() {
 	return (
 		<div className="App">
 			<div className="container">
-				<Navigation routes={routes} />
+				
+				<Route path='/' component={() => <Navigation routes={routes}/>} />
 
 				{routes.map((r, idx) => (
+					
 					<Route
 						key={idx}
 						exact
