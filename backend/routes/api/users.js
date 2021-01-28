@@ -27,12 +27,14 @@ router.post('/register', async (req, res) => {
             throw 'Username taken'
         }
 
-        res.json(
-            await insertUser({
-                name: username,
-                pass: await argon2.hash(password),
-            })
-        )
+        await insertUser({
+            name: username,
+            pass: await argon2.hash(password),
+        })
+
+        const accessToken = jwt.sign({ username: username }, secret)
+
+        res.json(accessToken)
     } catch (e) {
         res.status(400)
         res.send(e.toString())

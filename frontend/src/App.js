@@ -17,27 +17,33 @@ const routes = [
 		path: "/",
 		name: "Home",
 		component: Home,
-	},
-
-	{
-		path: "/convert",
-		name: "Convert",
-		component: Convert,
+		showLogin: 0, // 0 - always show
+		// 1 - show when not logged in
+		// 2 - show when logged in
 	},
 	{
 		path: "/about",
 		name: "About",
 		component: About,
+		showLogin: 0,
+	},
+	{
+		path: "/convert",
+		name: "Convert",
+		component: Convert,
+		showLogin: 2,
 	},
 	{
 		path: "/login",
 		name: "Login",
 		component: Login,
+		showLogin: 1,
 	},
 	{
 		path: "/register",
 		name: "Register",
 		component: Register,
+		showLogin: 1,
 	},
 ]
 
